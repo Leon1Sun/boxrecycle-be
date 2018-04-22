@@ -26,8 +26,8 @@ router.all('/', function(req, res, next) {
                 //用户点击菜单响应事件
                 if(messageType === 'event') {
                     var eventName = body.Event[0];
-                    let result = await WeChatService.userEvent(body);
-                    res.send(result)
+                    WeChatService.userEvent(body).then(result => res.send(result));
+                    
                 //自动回复消息
                 }else if(messageType === 'text') {
                     // EventFunction.responseNews(body, res);

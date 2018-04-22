@@ -40,12 +40,10 @@ module.exports = {
         if(body.Event[0] === 'subscribe'){
             const openId = body.FromUserName[0];
             var user = new MongoService.user({_id:openId,openId:openId,subscribe:true});
-            user.save().then((result)=>{
-                return result
-            })
+            return await user.save()
         }
         else if(body.Event[0] === 'unsubscribe'){
-
         }
+        return await 1;
     }
 }
