@@ -1,10 +1,10 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;   //  创建模型
-var accessToken = new Schema({
+var accessTokenSchema = new Schema({
     accesstoken: String,
-    timastamp:Number
+    timestamp:Number
 });
 
 module.exports = (mongoose)=>{
-    return mongoose.model("accessToken",accessToken,"accessToken")
+    return mongoose.model("accessTokenSchema",accessTokenSchema,"accessToken")
 }

@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var weChatRouter = require('./routes/weChat');
 
+var task = require("./task/accessTokenTask")
 var app = express();
 
 // view engine setup
@@ -40,4 +41,5 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+task();
 module.exports = app;
